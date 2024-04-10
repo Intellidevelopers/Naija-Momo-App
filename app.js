@@ -114,7 +114,7 @@ btnVerify.addEventListener('click', () => {
         `;
 
         setTimeout(() => {
-            window.location.href = `https://ajwin.vercel.app/`;
+            window.location.href = `ajwin/index.html`;
         }, 3000);
     } else {
         icon.classList.remove('fa-check-circle');
