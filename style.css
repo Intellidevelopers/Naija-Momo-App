@@ -203,3 +203,7 @@ body {
     font-weight: 900;
     color: green;
 }
+img{
+  width: 100px;
+  margin-left: 120px;
+}
