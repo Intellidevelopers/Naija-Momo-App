@@ -9,18 +9,19 @@ body {
 
 body {
   min-height: 100vh;
-  background-color: #f4f4f4; 
+  background-color: #ffffff; 
   scroll-behavior: smooth;
 }
 
 .btn-verify,
 .btn-continue {
   width: 100%;
-  color: #000;
+  color: #fff;
   border-radius: 10px;
-  background-color: #ffdc3d;
+  background-color: #4f20cf;
   padding-left: 30px;
   padding-right: 30px;
+  padding: 10px;
   font-weight: 500;
   margin-bottom: 15px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; }
@@ -35,10 +36,10 @@ body {
 .otp-container,
 .box-verify {
   top: 0;
-  left: 0;
+  left: -20%;
   position: absolute;
-  width: 100%;
-  height: 100vh;
+  width: 140%;
+  height: 70vh;
   display: flex;
   margin-top: -12%;
   flex-direction: column;
@@ -47,7 +48,6 @@ body {
 
 .otp-container,
 .mobile-verify {
-  box-shadow: 0 0 20px 20px #e2e2e2;
   z-index: 10;
   transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
   .otp-container .nav,
@@ -197,3 +197,9 @@ body {
   transform: scale(1); }
 
 /*# sourceMappingURL=style.css.map */
+
+.heading{
+    font-size: 20px;
+    font-weight: 900;
+    color: green;
+}

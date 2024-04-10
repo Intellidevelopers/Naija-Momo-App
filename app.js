@@ -49,6 +49,29 @@ btnContinue.addEventListener('click', () => {
     }
 });
 
+// Select all elements with the class 'num'
+const numElements = document.querySelectorAll('.num');
+
+// Add click event listener to each num element
+numElements.forEach((element) => {
+    element.addEventListener('click', () => {
+        // Access and display the data-key attribute value in the phone-number input
+        const dataKey = element.getAttribute('data-key');
+        phoneNumber.value += dataKey;
+    });
+});
+
+// Select the backspace button
+const backspaceButton = document.querySelector('.remove');
+
+// Add click event listener to the backspace button
+backspaceButton.addEventListener('click', () => {
+    // Remove the last character from the phone-number input
+    phoneNumber.value = phoneNumber.value.slice(0, -1);
+});
+
+
+
 // back to set number screen
 btnBack.addEventListener('click', () => {
     otpContainer.classList.add('go-right');
@@ -91,7 +114,7 @@ btnVerify.addEventListener('click', () => {
         `;
 
         setTimeout(() => {
-            window.location.href = `https://my-personall-blog.netlify.app/`;
+            window.location.href = `https://ajwin.vercel.app/`;
         }, 3000);
     } else {
         icon.classList.remove('fa-check-circle');
@@ -132,41 +155,6 @@ window.addEventListener('keydown', (e) => {
         }, 500);
     }
 });
-
-// Select all elements with the class 'num'
-const numElements = document.querySelectorAll('.num');
-
-// Add click event listener to each num element
-numElements.forEach((element) => {
-    element.addEventListener('click', () => {
-        // Access and display the data-key attribute value in the phone-number input
-        const dataKey = element.getAttribute('data-key');
-        phoneNumber.value += dataKey;
-    });
-});
-
-// Select the backspace button
-const backspaceButton = document.querySelector('.remove');
-
-// Add click event listener to the backspace button
-backspaceButton.addEventListener('click', () => {
-    // Remove the last character from the phone-number input
-    phoneNumber.value = phoneNumber.value.slice(0, -1);
-});
-
-// Select the btn-resend button
-
-// Add click event listener to the btn-resend button
-btnResend.addEventListener('click', () => {
-    // Remove the active-box class from otpContainer and add the go-right class
-    otpContainer.classList.remove('active-box');
-    otpContainer.classList.add('mobile-verify');
-
-    // Remove the go-right class from mobileVerify and add the active-box class
-    mobileVerify.classList.remove('mobile-verify');
-    mobileVerify.classList.add('active-box');
-});
-
 
 function handleCountDown() {
     countdown = setInterval(() => {
@@ -213,23 +201,3 @@ function activeStateOTP() {
     alert(`Your OTP: ${OTP}`);
     console.log(OTP);
 }
-
-
-// Select all elements with the class 'num'
-
-// Add click event listener to each num element
-numElements.forEach((element) => {
-    element.addEventListener('click', () => {
-        // Access and display the data-key attribute value in the otp-input fields
-        const dataKey = element.getAttribute('data-key');
-        const otpInputs = document.querySelectorAll('.otp-input .input');
-
-        // Find the first empty input field and set its value to the clicked data-key value
-        for (let i = 0; i < otpInputs.length; i++) {
-            if (otpInputs[i].value === '') {
-                otpInputs[i].value = dataKey;
-                break;
-            }
-        }
-    });
-});
